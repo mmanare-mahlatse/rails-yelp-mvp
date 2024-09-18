@@ -4,3 +4,22 @@
 <br>
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.phone_number %></p>
+
+<%= link_to "Edit restaurant", edit_restaurant_path %>
+<br>
+<br>
+<%= link_to "Restaurants List", restaurants_path %>
+<br>
+<br>
+<%= link_to "Delete",
+  destroy_restaurant_path(@restaurant),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+
+<li class="list-group-item">
+  <%= review.content %>
+  <%= link_to "Delete",
+    review_path(review),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</li>
